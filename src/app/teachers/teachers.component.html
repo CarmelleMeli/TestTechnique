@@ -1,0 +1,10 @@
+<div  >
+    <p class="text- font-lato text-[#333333] text-[20px] font-bold">Teachers</p>
+    <div class=" mt-8 flex flex-col items-center md:grid md:grid-cols-2 xl:flex gap-5">
+        <app-person-info *ngFor="let teacher of teachers" [personInfo]="teacher" ></app-person-info>
+        
+        
+    </div>
+    
+
+</div>
