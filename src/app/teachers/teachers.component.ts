@@ -11,7 +11,7 @@ export class TeachersComponent {
 
   ngOnInit() {
     //get the data from the json file
-    fetch('../../assets/data.json')
+    fetch('/TestTechnique/assets/data.json')
     .then(response => {
       return response.json();
     }).then(data => {
