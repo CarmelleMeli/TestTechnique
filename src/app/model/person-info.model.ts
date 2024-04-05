@@ -23,7 +23,7 @@ constructor(id: number, firstName: string, lastName: string, description: string
 }
 
 
-//From Json // Factory
+//From Json to PersonInfo
 static fromJson(json: JsonPersonInfoType): PersonInfo {
     return new PersonInfo(
         json.id, json.firstName, json.lastName, json.description, 

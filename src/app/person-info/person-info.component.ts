@@ -30,13 +30,13 @@ export class PersonInfoComponent {
     this.isTeacher = this.personInfo.isTeacher;
   }
 
+  //display the badges dependent on the student or teacher
   get getBagde() : {text: string, color: string} {
     let text = "";
     let color = ""
 
     const person = this.personInfo;
     
-
     if (person.isTeacher) {
       text = person.assignment!;
       switch (person.assignment) {

@@ -10,19 +10,18 @@ export class StudentsComponent {
   students!: PersonInfo[] ;
 
   ngOnInit() {
-    //on recupere les inffos contenus dans le tichier json data.json
+    //get the data from the json file
     fetch('../../assets/data.json')
     .then(response => {
       return response.json();
     }).then(data => {
-      //on recupere les infos de l'utilisateur sil est uniquement teacher
+      //extract the students from the data
 
       this.students = data.map((item: JsonPersonInfoType) =>
-        //on verifie qi cest enseignat avant de creer
           PersonInfo.fromJson(item)
       ).filter((teacher: Pick<PersonInfo, "isTeacher">) => teacher.isTeacher === false);
       
-      // On trie par date, ancien au plus recent
+      // sort the students by house
       this.students.sort((a, b) => a.isOlderInHouseThan(b));
 
       
